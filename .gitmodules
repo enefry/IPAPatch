@@ -1,0 +1,6 @@
+[submodule "IPAPatch/Vendors/FLEX"]
+	path = IPAPatch/Vendors/FLEX
+	url = https://github.com/FLEXTool/FLEX.git
+[submodule "IPAPatch/Vendors/Aspects"]
+	path = IPAPatch/Vendors/Aspects
+	url = https://github.com/steipete/Aspects.git

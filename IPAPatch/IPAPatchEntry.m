@@ -9,6 +9,29 @@
 #import "IPAPatchEntry.h"
 #import <UIKit/UIKit.h>
 
+#if __has_include("FLEXManager.h")
+#import "FLEXManager.h"
+#define FLEXEnable 1
+#else
+#define FLEXEnable 0
+#endif
+
+#if FLEXEnable
+@interface UIWindow(share)
+@end
+
+@implementation UIWindow(share)
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.type == UIEventTypeMotion && event.subtype == UIEventSubtypeMotionShake) {
+        NSLog(@"Laboratory 摇晃了手机");
+        [[FLEXManager sharedManager] showExplorer];
+    }
+}
+
+@end
+#endif
+
 @implementation IPAPatchEntry
 
 + (void)load
